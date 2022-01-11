@@ -26,5 +26,6 @@ Para este projeto foram utilizado as ferramentas Spring Boot com a linguagem Jav
 1. **``POST localhost:8080/clients``**: Para cadastrar clientes.
 2. **``GET localhost:8080/clients``**: Lista detalhes do cliente cadastrado.
 3. **``PUT localhost:8080/clients/{id}`` ou ``DELETE localhost:8080/clients/{id}``**: Para atualizar ou deletar um cliente.
-4. **``GET localhost:8080/clients/{idCli}/loans``**: Lista todos os empréstimos feitos por um cliente.
 5. **``POST localhost:8080/clients/{idCli}/loans?create{idCliente}``**: Para solicitar um empréstimo.
+6. **``GET localhost:8080/clients/{idCli}/loans``**: Lista todos os empréstimos feitos por um cliente.
+7. **``GET localhost:8080/clients/{idCli}/loans/{idLoan}``**: Para ver o detalhe de um empréstimo.
