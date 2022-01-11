@@ -30,4 +30,4 @@ Para este projeto foram utilizado as ferramentas Spring Boot com a linguagem Jav
 6. **``GET localhost:8080/clients/{idCli}/loans``**: Lista todos os empréstimos feitos por um cliente.
 7. **``GET localhost:8080/clients/{idCli}/loans/{idLoan}``**: Para ver o detalhe de um empréstimo.
 
-#Para autenticar é necessário ver através do console o token de senha gerado pelo Spring Security.
+#Para autenticar é necessário ver através do console o token de senha gerado pelo Spring Security e utilizar com o username user.
