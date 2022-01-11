@@ -1,30 +1,19 @@
-package br.com.paulorjuniorp.tqievolutiondesafio.domain;
+package br.com.paulorjuniorp.tqievolutiondesafio.dtos;
 
 import java.io.Serializable;
 import java.math.BigDecimal;
-import java.util.ArrayList;
-import java.util.List;
-import java.util.Objects;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
-import javax.persistence.OneToMany;
 import javax.validation.constraints.Email;
 import javax.validation.constraints.NotEmpty;
 
 import org.hibernate.validator.constraints.Length;
 
-@Entity
-public class Client implements Serializable{
+import br.com.paulorjuniorp.tqievolutiondesafio.domain.Client;
+
+public class ClientDTO implements Serializable {
 
 	private static final long serialVersionUID = 1L;
-	
-	@Id
-	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;
-	
 	@NotEmpty
 	@Length(min = 3, max = 100)
 	private String name;
@@ -48,25 +37,21 @@ public class Client implements Serializable{
 	@NotEmpty
 	@Length(min = 8, max = 16)
 	private String password;
-	
-	@OneToMany(mappedBy = "client")
-	private List<Loan> loans = new ArrayList<>();
-	
-	public Client() {
+
+	public ClientDTO() {
 		super();
 	}
 
-	public Client(Long id, String name, String email, String cpf, String rg, String address, BigDecimal income,
-			String password) {
+	public ClientDTO(Client clientObj) {
 		super();
-		this.id = id;
-		this.name = name;
-		this.email = email;
-		this.cpf = cpf;
-		this.rg = rg;
-		this.address = address;
-		this.income = income;
-		this.password = password;
+		this.id = clientObj.getId();
+		this.name = clientObj.getName();
+		this.email = clientObj.getEmail();
+		this.cpf = clientObj.getCpf();
+		this.rg = clientObj.getRg();
+		this.address = clientObj.getAddress();
+		this.income = clientObj.getIncome();
+		this.password = clientObj.getPassword();
 	}
 
 	public Long getId() {
@@ -133,30 +118,4 @@ public class Client implements Serializable{
 		this.password = password;
 	}
 
-	public List<Loan> getLoans() {
-		return loans;
-	}
-
-	public void setLoans(List<Loan> loans) {
-		this.loans = loans;
-	}
-
-	@Override
-	public int hashCode() {
-		return Objects.hash(id);
-	}
-
-	@Override
-	public boolean equals(Object obj) {
-		if (this == obj)
-			return true;
-		if (obj == null)
-			return false;
-		if (getClass() != obj.getClass())
-			return false;
-		Client other = (Client) obj;
-		return Objects.equals(id, other.id);
-	}
-	
-	
 }
