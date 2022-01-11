@@ -17,3 +17,14 @@ Restrições
 1. A implementação deve utilizar linguagem Java ou Kotlin.
 2. Use todos os seus conhecimentos adquiridos no bootcamp para explorar bem a solução. Não se preocupe, porque não existe certo ou errado. Só queremos conhecer um pouco mais sobre você.
 3. Utilize o GitHub para repositório de código.
+
+## Tecnologias Utilizadas
+Para este projeto foram utilizado as ferramentas Spring Boot com a linguagem Java, banco de dados MySQL, Spring Data JPA, Spring Security, Spring Web e Validation.
+
+## Como testar
+#Para teste é necessário acessar os seguintes end-points
+1. **``POST localhost:8080/clients``**: Para cadastrar clientes.
+2. **``GET localhost:8080/clients``**: Lista detalhes do cliente cadastrado.
+3. **``PUT localhost:8080/clients/{id}`` ou ``DELETE localhost:8080/clients/{id}``**: Para atualizar ou deletar um cliente.
+4. **``GET localhost:8080/clients/{idCli}/loans``**: Lista todos os empréstimos feitos por um cliente.
+5. **``POST localhost:8080/clients/{idCli}/loans?create{idCliente}``**: Para solicitar um empréstimo.
